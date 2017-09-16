@@ -1,76 +1,64 @@
-function setHeight(){
+window.onload=function(){
 	var oDiv1=document.getElementById("periodTable");
 	var oDiv2=document.getElementById("number");
 	oDiv2.style.height=oDiv1.offsetHeight+"px";
-}//将数字栏的div高度与元素栏的div高度设置相等
-window.onload=function(){
-	setHeight();
-	tdClick();
-	operation();
-	numInput();
-    calculate()
-
-}
-function tdClick(){
+	//将数字栏的div高度与元素栏的div高度设置相等
 	var oBox=document.getElementsByClassName("box");
+	var oNum=document.getElementsByClassName("num");
+	var oSymbol=document.getElementsByClassName("symbol");
 	var oInput=document.getElementById("inputbox");
-	var oResults=document.getElementById("results");
+	var oResult=document.getElementById("results");
+	var oButton=document.getElementById("press");
+	var Timer=null;
 	for(i=0;i<oBox.length;i++){
 		oBox[i].onclick=function(){
+			var oLength=this.getElementsByTagName("span")[2].innerText.length;
 			oInput.value+=this.getElementsByTagName("span")[2].innerText;
-			oResults.innerHTML+=this.getElementsByTagName("span")[1].innerText;
-			//alert(typeof(oInput.value));
+			oResult.innerHTML+=this.getElementsByTagName("span")[1].innerText;
 		}
 	}
-}//给元素周期表中的每个td方块添加点击事件,当点击td时，将td内的原子质量输入到输入框中
-function numInput(){
-	var oDiv2=document.getElementById("number");
-	var oNum=oDiv2.getElementsByClassName("num");
-	var oInput=document.getElementById("inputbox");
-	var oResults=document.getElementById("results");
-	var Timer=null;
-	for(i=0;i<oNum.length;i++){
-		oNum[i].onclick=function(){
+	for(j=0;j<oNum.length;j++){
+		oNum[j].onclick=function(){
 			var str1=this.innerText;
 			clearTimeout(Timer);
 			Timer=setTimeout(function(){
 				oInput.value+=str1+"*";
-				oResults.innerHTML+=str1;
+				oResult.innerText+=str1;
 			},300)
 		}
-		oNum[i].ondblclick=function(){
+		oNum[j].ondblclick=function(){
 			clearTimeout(Timer);
 			oInput.value+="*"+this.innerText;
-			oResults.innerHTML+=this.innerText.sub();
+			oResult.innerHTML+=this.innerText.sub();
 		}
 	}
-}//给数字方块同时添加一个单击事件和双击事件，当单击一下时，显示"num×"，当双击时，显示"×num"。
-function operation(){
-	var oSymbol=document.getElementsByClassName("symbol");
-	var oInput=document.getElementById("inputbox");
-	var oResults=document.getElementById("results");
-	for(i=0;i<oSymbol.length;i++){
-		oSymbol[i].onclick=function(){
+	for(k=0;k<oSymbol.length;k++){
+		oSymbol[k].onclick=function(){
 			if(this.innerText=="C"){
 				oInput.value="";
-				oResults.innerHTML="";
-			}else if(this.innerText=="←"){
-				oInput.value=oInput.value.substring(0,oInput.value.length-1);
-				oResults.innerHTML=oResults.innerHTML.substring(0,oResults.innerHTML.length-1);
-			}else{
-				oInput.value+=this.innerText;
-			}
-		}	
+			    oResult.innerHTML="";
+		    }else if(this.innerText=="←"){
+		    	//如果最后两个字符中有*,则oInput.length-2；如果最后一个字符中有+||(||)||.，则oInput.length-1；如果最后四个字符中有.，则oInput.length-5
+		    	var c1=oInput.value.substring(oInput.value.length-2,oInput.value.length);
+		    	var c2=oInput.value.substring(oInput.value.length-1,oInput.value.length);
+		    	var c3=oInput.value.substring(oInput.value.length-4,oInput.value.length);
+		    	if((c1.indexOf("*"))!=-1){
+		    		oInput.value=oInput.value.substring(0,oInput.value.length-2);
+		    	}else if((c2.indexOf("+"||"("||")"))!=-1){
+		    		oInput.value=oInput.value.substring(0,oInput.value.length-1);
+		    	}else if((c3.indexOf("."))!=-1){
+		    		oInput.value=oInput.value.substring(0,oInput.value.length-5);
+		    	}else{
+		    		oInput.value=oInput.value.substring(0,oInput.length-3);
+		    	}
+		    }else{
+		    	oInput.value+=this.innerText;
+		    }
+		}
 	}
-}//给C，←，等操作符添加意义。
-function calculate(){
-	var oInput=document.getElementById("inputbox");
-	var oButton=document.getElementById("press");
-	var oResults=document.getElementById("results");
+	//点击计算按钮就可以显示结果
 	oButton.onclick=function(){
 		var str2=oInput.value;
-		//eval(str2);
-		//alert(eval(str2));
-		oResults.innerHTML+=":"+eval(str2).toFixed(2);		
-	}
+		oResult.innerHTML+=":"+eval(str2).toFixed(2);
+    }
 }
