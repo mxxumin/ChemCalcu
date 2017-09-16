@@ -16,8 +16,11 @@
 
 `2017.06.22`<br/>
   :zap:对[ChemCalcu](https://mxxumin.github.io/ChemCalcu/index.html)进行优化。<br/>
-  1.对`html`结构、`css`样式进行优化，利用栅格布局+`<div>`标签取代`<table>`标签来表示元素周期表中的元素。<br/>
-  2.引入数组，利用数组对输入值进行储存，优化`←`删除按钮功能。
+  1.对`html`结构、`css`样式进行优化，利用栅格布局+`<div>`标签取代`<table>`标签来表示元素周期表中的元素，并为页面添加响应式效果。<br/>
+  2.引入数组，利用数组对输入值进行储存，优化`←`删除按钮功能。<br/>
+  3.对数字按钮的单双击效果进行修改。<br/>
+  4.单击数字表示下标，即元素的个数，如：H<sub>2</sub>O，单击数字“2”表示“<sub>2</sub>”。<br/>
+  5.双击数字表示化合物的个数，如：GdCl<sub>3</sub>·6H<sub>2</sub>O，双击数字“6”表示6个H<sub>2</sub>O。
 
 `2017.05.18`<br/>
   :zap:对[ChemCalcu](https://mxxumin.github.io/ChemCalcu/index.html)进行优化。<br/>

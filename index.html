@@ -1,306 +1,267 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-	<title>相对分子质量计算器</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/js.js"></script>
+	<title>ChemCalcu 化学分子质量计算器</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/js.js"></script>
 </head>
 <body>
-<div id="calculator">
-	<div id="headline">
-		<h1>相对分子质量计算器<br>Relative Molecular Mass Calc</h1>
-	</div>
-    <div id="key">
-    	<div id="periodTable">
-    	    <h3>元素周期表</h3>
-    		<div id="chemElement1">
-		        <table cellspacing="0">
-			        <tr>
-				        <td>
-					        <table>
-						        <tr>
-							        <td>&nbsp</td>
-							        <td class="group">1</td>
-							        <td class="group">2</td>
-						        </tr>
-						        <tr>
-							        <td class="period">1</td>
-							        <td class="box otherNonmetal"><span>1</span><span>H</span><span>1.008</span></td>
-							        <td>&nbsp</td>
-						        </tr>
-						        <tr>
-							        <td class="period">2</td>
-							        <td class="box alkalis"><span>3</span><span>Li</span><span>6.941</span></td>
-							        <td class="box alkalisEarth"><span>4</span><span>Be</span><span>9.012</span></td>
-						        </tr>
-						        <tr>
-							        <td class="period">3</td>
-							        <td class="box alkalis"><span>11</span><span>Na</span><span>22.99</span></td>
-							        <td class="box alkalisEarth"><span>12</span><span>Mg</span><span>24.31</span></td>
-						        </tr>
-					        </table>
-				        </td>
-				        <td class="subgroup">
-					        <table>
-						        <tr>
-							        <td class="group">3</td>
-							        <td class="group">4</td>
-							        <td class="group">5</td>
-							        <td class="group">6</td>
-							        <td class="group">7</td>
-							        <td class="group">8</td>
-							        <td class="group">9</td>
-							        <td class="group">10</td>
-							        <td class="group">11</td>
-							        <td class="group">12</td>
-						        </tr>
-						        <tr>
-							        <td colspan="10">
-							        	<div class="inputs">
-							        		<input id="inputbox" type="text" style="width:350px;height:50px;"/>
-							        		<button type="button" id="press">计算</button>
-							        		<div id="results">
-							        			
-							        		</div>
-							        	</div>
-							        </td>
-						        </tr>
-					        </table>
-				        </td>
-				        <td>
-					        <table>
-						        <tr>
-							        <td class="group">13</td>
-							        <td class="group">14</td>
-							        <td class="group">15</td>
-							        <td class="group">16</td>
-							        <td class="group">17</td>
-							        <td class="group">18</td>
-						        </tr>
-						        <tr>
-							        <td>&nbsp</td>
-							        <td>&nbsp</td>
-							        <td>&nbsp</td>
-							        <td>&nbsp</td>
-							        <td>&nbsp</td>
-							        <td class="box nobleGas"><span>2</span><span>He</span><span>4.003</span></td>
-						        </tr>
-						        <tr>
-							        <td class="box nonmetal"><span>5</span><span>B</span><span>10.81</span></td>
-							        <td class="box otherNonmetal"><span>6</span><span>C</span><span>12.01</span></td>
-							        <td class="box otherNonmetal"><span>7</span><span>N</span><span>14.01</span></td>
-							        <td class="box otherNonmetal"><span>8</span><span>O</span><span>16.00</span></td>
-							        <td class="box halogen"><span>9</span><span>F</span><span>19.00</span></td>
-							        <td class="box nobleGas"><span>10</span><span>Ne</span><span>20.18</span></td>
-						        </tr>
-						        <tr>
-							        <td class="box lateTransition"><span>13</span><span>Al</span><span>26.98</span></td>
-							        <td class="box nonmetal"><span>14</span><span>Si</span><span>28.09</span></td>
-							        <td class="box otherNonmetal"><span>15</span><span>P</span><span>30.97</span></td>
-							        <td class="box otherNonmetal"><span>16</span><span>S</span><span>32.07</span></td>
-							        <td class="box halogen"><span>17</span><span>Cl</span><span>35.45</span></td>
-        							<td class="box nobleGas"><span>18</span><span>Ar</span><span>39.95</span></td>
-						        </tr>
-					        </table>
-				        </td>
-			        </tr>
-        			<tr>
-        				<td>
-        					<table>
-        						<tr>
-        							<td class="period">4</td>
-        							<td class="box alkalis"><span>19</span><span>K</span><span>39.10</span></td>
-        							<td class="box alkalisEarth"><span>20</span><span>Ca</span><span>40.08</span></td>
-        						</tr>
-        						<tr>
-        							<td class="period">5</td>
-        							<td class="box alkalis"><span>37</span><span>Rb</span><span>85.47</span></td>
-        							<td class="box alkalisEarth"><span>38</span><span>Sr</span><span>87.62</span></td>
-        						</tr>
-        						<tr>
-        							<td class="period">6</td>
-        							<td class="box alkalis"><span>55</span><span>Cs</span><span>132.9</span></td>
-        							<td class="box alkalisEarth"><span>56</span><span>Ba</span><span>137.3</span></td>
-        						</tr>
-        						<tr>
-        							<td class="period">7</td>
-        							<td class="box alkalis"><span>87</span><span>Fr</span><span>223</span></td>
-        							<td class="box alkalisEarth"><span>88</span><span>Ra</span><span>226</span></td>
-        						</tr>
-        					</table>
-        				</td>
-        				<td>
-        					<table>
-        						<tr>
-        							<td class="box transitionMetal"><span>21</span><span>Sc</span><span>44.96</span></td>
-        							<td class="box transitionMetal"><span>22</span><span>Ti</span><span>47.87</span></td>
-        							<td class="box transitionMetal"><span>23</span><span>V</span><span>50.94</span></td>
-        							<td class="box transitionMetal"><span>24</span><span>Cr</span><span>52.00</span></td>
-        							<td class="box transitionMetal"><span>25</span><span>Mn</span><span>54.94</span></td>
-        							<td class="box transitionMetal"><span>26</span><span>Fe</span><span>55.85</span></td>
-        							<td class="box transitionMetal"><span>27</span><span>Co</span><span>58.93</span></td>
-        							<td class="box transitionMetal"><span>28</span><span>Ni</span><span>58.69</span></td>
-        							<td class="box transitionMetal"><span>29</span><span>Cu</span><span>63.55</span></td>
-        							<td class="box transitionMetal"><span>30</span><span>Zn</span><span>65.39</span></td>
-        						</tr>
-        						<tr>
-        							<td class="box transitionMetal"><span>39</span><span>Y</span><span>88.91</span></td>
-        							<td class="box transitionMetal"><span>40</span><span>Zr</span><span>91.22</span></td>
-        							<td class="box transitionMetal"><span>41</span><span>Nb</span><span>92.91</span></td>
-        							<td class="box transitionMetal"><span>42</span><span>Mo</span><span>95.94</span></td>
-        							<td class="box transitionMetal"><span>43</span><span>Tc</span><span>98</span></td>
-        							<td class="box transitionMetal"><span>44</span><span>Ru</span><span>101.1</span></td>
-        							<td class="box transitionMetal"><span>45</span><span>Rh</span><span>102.9</span></td>
-        							<td class="box transitionMetal"><span>46</span><span>Pd</span><span>106.4</span></td>
-        							<td class="box transitionMetal"><span>47</span><span>Ag</span><span>107.9</span></td>
-        							<td class="box transitionMetal"><span>48</span><span>Cd</span><span>112.4</span></td>
-        						</tr>
-        						<tr>
-        							<td class="box lanthanide"><span>57-71</span><span>La-Lu</span></td>
-        							<td class="box transitionMetal"><span>72</span><span>Hf</span><span>178.5</span></td>
-        							<td class="box transitionMetal"><span>73</span><span>Ta</span><span>180.9</span></td>
-        							<td class="box transitionMetal"><span>74</span><span>W</span><span>183.8</span></td>
-        							<td class="box transitionMetal"><span>75</span><span>Re</span><span>186.2</span></td>
-        							<td class="box transitionMetal"><span>76</span><span>Os</span><span>190.2</span></td>
-        							<td class="box transitionMetal"><span>77</span><span>Ir</span><span>192.2</span></td>
-        							<td class="box transitionMetal"><span>78</span><span>Pt</span><span>195.1</span></td>
-        							<td class="box transitionMetal"><span>79</span><span>Au</span><span>197.0</span></td>
-        							<td class="box transitionMetal"><span>80</span><span>Hg</span><span>200.6</span></td>
-        						</tr>
-        						<tr>
-        							<td class="box actinide"><span>89-103</span><span>Ac-Lr</span></td>
-        							<td class="box transitionMetal"><span>104</span><span>Rf</span><span>261</span></td>
-        							<td class="box transitionMetal"><span>105</span><span>Db</span><span>262</span></td>
-        							<td class="box transitionMetal"><span>106</span><span>Sg</span><span>263</span></td>
-        							<td class="box transitionMetal"><span>107</span><span>Bh</span><span>264</span></td>
-        							<td class="box transitionMetal"><span>108</span><span>Hs</span><span>265</span></td>
-        							<td class="box transitionMetal"><span>109</span><span>Mt</span><span>268</span></td>
-        							<td class="box transitionMetal"><span>110</span><span>Ds</span><span>271</span></td>
-        							<td class="box transitionMetal"><span>111</span><span>Rg</span><span>272</span></td>
-        							<td class="box transitionMetal"><span>112</span><span>Cn</span><span></span></td>
-        						</tr>
-        					</table>
-        				</td>
-        				<td>
-        					<table>
-        						<tr>
-        							<td class="box lateTransition"><span>31</span><span>Ga</span><span>69.72</span></td>
-        							<td class="box nonmetal"><span>32</span><span>Ge</span><span>72.61</span></td>
-        							<td class="box nonmetal"><span>33</span><span>As</span><span>74.92</span></td>
-        							<td class="box otherNonmetal"><span>34</span><span>Se</span><span>78.96</span></td>
-        							<td class="box halogen"><span>35</span><span>Br</span><span>79.90</span></td>
-        							<td class="box nobleGas"><span>36</span><span>Kr</span><span>83.30</span></td>
-        						</tr>
-        						<tr>
-        							<td class="box lateTransition"><span>49</span><span>In</span><span>114.8</span></td>
-        							<td class="box lateTransition"><span>50</span><span>Sn</span><span>118.7</span></td>
-        							<td class="box nonmetal"><span>51</span><span>Sb</span><span>121.8</span></td>
-        							<td class="box nonmetal"><span>52</span><span>Te</span><span>127.6</span></td>
-        							<td class="box halogen"><span>53</span><span>I</span><span>126.9</span></td>
-        							<td class="box nobleGas"><span>54</span><span>Xe</span><span>131.3</span></td>
-        						</tr>
-        						<tr>
-        							<td class="box lateTransition"><span>81</span><span>Tl</span><span>204.4</span></td>
-        							<td class="box lateTransition"><span>82</span><span>Pb</span><span>207.2</span></td>
-        							<td class="box lateTransition"><span>83</span><span>Bi</span><span>209.0</span></td>
-        							<td class="box nonmetal"><span>84</span><span>Po</span><span>210</span></td>
-        							<td class="box halogen"><span>85</span><span>At</span><span>210</span></td>
-        							<td class="box nobleGas"><span>86</span><span>Rn</span><span>222</span></td>
-        						</tr>
-        						<tr>
-        							<td class="box lateTransition"><span>113</span><span>Uut</span><span>284</span></td>
-        							<td class="box lateTransition"><span>114</span><span>Fi</span><span></span></td>
-        							<td class="box lateTransition"><span>115</span><span>Uup</span><span>288</span></td>
-        							<td class="box lateTransition"><span>116</span><span>Lv</span><span></span></td>
-        							<td class="box halogen"><span>117</span><span>Uus</span><span></span></td>
-        							<td class="box nobleGas"><span>118</span><span>Uuo</span><span></span></td>
-        						</tr>
-        					</table>
-        				</td>
-        			</tr>
-		        </table>
-	        </div>
-            <div id="chemElement2">
-        		<table>
-        			<tr>
-          		        <td class="box lanthanide"><span>57</span><span>La</span><span>138.9</span></td>
-        		        <td class="box lanthanide"><span>58</span><span>Ce</span><span>140.1</span></td>
-        		        <td class="box lanthanide"><span>59</span><span>Pr</span><span>140.9</span></td>
-        		        <td class="box lanthanide"><span>60</span><span>Nd</span><span>144.2</span></td>
-        		        <td class="box lanthanide"><span>61</span><span>Pm</span><span>145</span></td>
-        		        <td class="box lanthanide"><span>62</span><span>Sm</span><span>150.4</span></td>
-        		        <td class="box lanthanide"><span>63</span><span>Eu</span><span>152.0</span></td>
-        		        <td class="box lanthanide"><span>64</span><span>Gd</span><span>157.3</span></td>
-        		        <td class="box lanthanide"><span>65</span><span>Tb</span><span>158.9</span></td>
-        		        <td class="box lanthanide"><span>66</span><span>Dy</span><span>162.5</span></td>
-        		        <td class="box lanthanide"><span>67</span><span>Ho</span><span>164.9</span></td>
-        		        <td class="box lanthanide"><span>68</span><span>Er</span><span>167.3</span></td>
-        		        <td class="box lanthanide"><span>69</span><span>Tm</span><span>168.9</span></td>
-        		        <td class="box lanthanide"><span>70</span><span>Yb</span><span>173.0</span></td>
-        		        <td class="box lanthanide"><span>71</span><span>Lu</span><span>175.0</span></td>
-        		    </tr>
-        			<tr>
-        				<td class="box actinide"><span>89</span><span>Ac</span><span>227</span></td>
-        				<td class="box actinide"><span>90</span><span>Th</span><span>232.0</span></td>
-        				<td class="box actinide"><span>91</span><span>Pa</span><span>231.0</span></td>
-        				<td class="box actinide"><span>92</span><span>U</span><span>238.0</span></td>
-        				<td class="box actinide"><span>93</span><span>Np</span><span>237</span></td>
-        				<td class="box actinide"><span>94</span><span>Pu</span><span>244</span></td>
-        				<td class="box actinide"><span>95</span><span>Am</span><span>243</span></td>
-        				<td class="box actinide"><span>96</span><span>Cm</span><span>247</span></td>
-        				<td class="box actinide"><span>97</span><span>Bk</span><span>247</span></td>
-        				<td class="box actinide"><span>98</span><span>Cf</span><span>251</span></td>
-        				<td class="box actinide"><span>99</span><span>Es</span><span>252</span></td>
-        				<td class="box actinide"><span>100</span><span>Fm</span><span>257</span></td>
-        				<td class="box actinide"><span>101</span><span>Md</span><span>258</span></td>
-        				<td class="box actinide"><span>102</span><span>No</span><span>259</span></td>
-        				<td class="box actinide"><span>103</span><span>Lr</span><span>260</span></td>
-        			</tr>
-        		</table>
-            </div>
+<header>
+	<h1>ChemCalcu<br><small>化学分子量计算器</small></h1>
+</header>
+<main>
+    <div id="periodTable">
+    	<h3>元素周期表</h3>
+        <div class="row">
+            <div class="col-1"></div>
+			<div class="col-1"><span class="group">1</span></div>
+			<div class="col-1"><span class="group">2</span></div>
+			<div class="col-1"><span class="group">3</span></div>
+			<div class="col-1"><span class="group">4</span></div>
+			<div class="col-1"><span class="group">5</span></div>
+			<div class="col-1"><span class="group">6</span></div>
+			<div class="col-1"><span class="group">7</span></div>
+			<div class="col-1"><span class="group">8</span></div>
+			<div class="col-1"><span class="group">9</span></div>
+			<div class="col-1"><span class="group">10</span></div>
+			<div class="col-1"><span class="group">11</span></div>
+			<div class="col-1"><span class="group">12</span></div>
+			<div class="col-1"><span class="group">13</span></div>
+			<div class="col-1"><span class="group">14</span></div>
+			<div class="col-1"><span class="group">15</span></div>
+			<div class="col-1"><span class="group">16</span></div>
+			<div class="col-1"><span class="group">17</span></div>
+			<div class="col-1"><span class="group">18</span></div>
+			<div class="col-1"></div>
     	</div>
-    	<div id="number">
-    	    <h3>原子、分子个数</h3>
-    		<table>
-    			<tr>
-    				<td class="num">1</td>
-    				<td class="num">9</td>
-    			</tr>
-    			<tr>
-    				<td class="num">2</td>
-    				<td class="num">0</td>
-    			</tr>
-    			<tr>
-    				<td class="num">3</td>
-    				<td class="symbol">+</td>
-    			</tr>
-    			<tr>
-    				<td class="num">4</td>
-    				<td class="symbol">.</td>
-    			</tr>
-    			<tr>
-    				<td class="num">5</td>
-    				<td class="symbol">(</td>
-    			</tr>
-    			<tr>
-    				<td class="num">6</td>
-    				<td class="symbol">)</td>
-    			</tr>
-    			<tr>
-    				<td class="num">7</td>
-    				<td class="symbol">←</td>
-    			</tr>
-    			<tr>
-    				<td class="num">8</td>
-    				<td class="symbol">C</td>
-    			</tr>
-    		</table>
+    	<div class="row">
+   			<div class="col-1"><span class="period">1</span></div>
+   			<div class="col-1"><button class="otherNonmetal"><span>1</span><br/><span>H</span><br/><span>1.008</span></button></div>
+   			<div class="col-3"></div>
+    		<div class="col-5">
+    			<input id="inputbox" type="text" name="">
+    			<div id="extra"></div>
+    		</div>
+    		<div class="col-1">
+    			<input id="calcu" type="button" value="计算"></input>
+    		</div>
+    		<div class="col-7"></div>
+   			<div class="col-1"><button class="nobleGas"><span>2</span><br/><span>He</span><br/><span>4.003</span></button></div>
+   			<div class="col-1"></div>
+    	</div>
+    	<div class="row">
+    			<div class="col-1"><span class="period">2</span></div>
+    			<div class="col-1"><button class="alkalis"><span>3</span><br/><span>Li</span><br/><span>6.941</span></button></div>
+    			<div class="col-1"><button class="alkalisEarth"><span>4</span><br/><span>Be</span><br/><span>9.012</span></button></div>
+    			<div class="col-3"></div>
+    			<div class="col-4">
+    				<div id="result"></div>
+    			</div>
+    			<div class="col-3"></div>
+    			<div class="col-1"><button class="nonmetal"><span>5</span><br/><span>B</span><br/><span>10.81</span></button></div>
+    			<div class="col-1"><button class="otherNonmetal"><span>6</span><br/><span>C</span><br/><span>12.01</span></button></div>
+    			<div class="col-1"><button class="otherNonmetal"><span>7</span><br/><span>N</span><br/><span>14.01</span></button></div>
+    			<div class="col-1"><button class="otherNonmetal"><span>8</span><br/><span>O</span><br/><span>16.00</span></button></div>
+    			<div class="col-1"><button class="halogen"><span>9</span><br/><span>F</span><br/><span>19.00</span></button></div>
+    			<div class="col-1"><button class="nobleGas"><span>10</span><br/><span>Ne</span><br/><span>20.18</span></button></div>
+    			<div class="col-1"></div>
+    	</div>
+    	<div class="row">
+    			<div class="col-1"><span class="period">3</span></div>
+    			<div class="col-1"><button class="alkalis"><span>11</span><br/><span>Na</span><br/><span>22.99</span></button></div>
+    			<div class="col-1"><button class="alkalisEarth"><span>12</span><br/><span>Mg</span><br/><span>24.31</span></button></div>
+    			<div class="col-10"></div>
+    			<div class="col-1"><button class="lateTransition"><span>13</span><br/><span>Al</span><br/><span>26.98</span></button></div>
+    			<div class="col-1"><button class="nonmetal"><span>14</span><br/><span>Si</span><br/><span>28.09</span></button></div>
+    			<div class="col-1"><button class="otherNonmetal"><span>15</span><br/><span>P</span><br/><span>30.97</span></button></div>
+    			<div class="col-1"><button class="otherNonmetal"><span>16</span><br/><span>S</span><br/><span>32.07</span></button></div>
+    			<div class="col-1"><button class="halogen"><span>17</span><br/><span>Cl</span><br/><span>35.45</span></button></div>
+    			<div class="col-1"><button class="nobleGas"><span>18</span><br/><span>Ar</span><br/><span>39.95</span></button></div>
+    			<div class="col-1"></div>
+    	</div>
+    	<div class="row">
+    			<div class="col-1"><span class="period">4</span></div>
+    			<div class="col-1"><button class="alkalis"><span>19</span><br/><span>K</span><br/><span>39.10</span></button></div>
+    			<div class="col-1"><button class="alkalisEarth"><span>20</span><br/><span>Ca</span><br/><span>40.08</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>21</span><br/><span>Sc</span><br/><span>44.96</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>22</span><br/><span>Ti</span><br/><span>47.87</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>23</span><br/><span>V</span><br/><span>50.94</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>24</span><br/><span>Cr</span><br/><span>52.00</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>25</span><br/><span>Mn</span><br/><span>54.94</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>26</span><br/><span>Fe</span><br/><span>55.85</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>27</span><br/><span>Co</span><br/><span>58.93</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>28</span><br/><span>Ni</span><br/><span>58.69</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>29</span><br/><span>Cu</span><br/><span>63.55</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>30</span><br/><span>Zn</span><br/><span>65.39</span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>31</span><br/><span>Ga</span><br/><span>69.72</span></button></div>
+    			<div class="col-1"><button class="nonmetal"><span>32</span><br/><span>Ge</span><br/><span>72.61</span></button></div>
+    			<div class="col-1"><button class="nonmetal"><span>33</span><br/><span>As</span><br/><span>74.92</span></button></div>
+    			<div class="col-1"><button class="otherNonmetal"><span>34</span><br/><span>Se</span><br/><span>78.96</span></button></div>
+    			<div class="col-1"><button class="halogen"><span>35</span><br/><span>Br</span><br/><span>79.90</span></button></div>
+    			<div class="col-1"><button class="nobleGas"><span>36</span><br/><span>Kr</span><br/><span>83.30</span></button></div>
+    			<div class="col-1"></div>
+    	</div>
+    	<div class="row">
+    			<div class="col-1"><span class="period">5</span></div>
+    			<div class="col-1"><button class="alkalis"><span>37</span><br/><span>Rb</span><br/><span>85.47</span></button></div>
+    			<div class="col-1"><button class="alkalisEarth"><span>38</span><br/><span>Sr</span><br/><span>87.62</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>39</span><br/><span>Y</span><br/><span>88.91</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>40</span><br/><span>Zr</span><br/><span>91.22</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>41</span><br/><span>Nb</span><br/><span>92.91</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>42</span><br/><span>Mo</span><br/><span>95.94</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>43</span><br/><span>Tc</span><br/><span>98</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>44</span><br/><span>Ru</span><br/><span>101.1</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>45</span><br/><span>Rh</span><br/><span>102.9</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>46</span><br/><span>Pd</span><br/><span>106.4</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>47</span><br/><span>Ag</span><br/><span>107.9</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>48</span><br/><span>Cd</span><br/><span>112.4</span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>49</span><br/><span>In</span><br/><span>114.8</span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>50</span><br/><span>Sn</span><br/><span>118.7</span></button></div>
+    			<div class="col-1"><button class="nonmetal"><span>51</span><br/><span>Sb</span><br/><span>121.8</span></button></div>
+    			<div class="col-1"><button class="nonmetal"><span>52</span><br/><span>Te</span><br/><span>127.6</span></button></div>
+    			<div class="col-1"><button class="halogen"><span>53</span><br/><span>I</span><br/><span>126.9</span></button></div>
+    			<div class="col-1"><button class="nobleGas"><span>54</span><br/><span>Xe</span><br/><span>131.3</span></button></div>
+    			<div class="col-1"></div>
+    	</div>
+    	<div class="row">
+    			<div class="col-1"><span class="period">6</span></div>
+    			<div class="col-1"><button class="alkalis"><span>55</span><br/><span>Cs</span><br/><span>132.9</span></button></div>
+    			<div class="col-1"><button class="alkalisEarth"><span>56</span><br/><span>Ba</span><br/><span>137.3</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>57-71</span><br/><span>La-Lu</span><br/></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>72</span><br/><span>Hf</span><br/><span>178.5</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>73</span><br/><span>Ta</span><br/><span>180.9</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>74</span><br/><span>W</span><br/><span>183.8</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>75</span><br/><span>Re</span><br/><span>186.2</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>76</span><br/><span>Os</span><br/><span>190.2</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>77</span><br/><span>Ir</span><br/><span>192.2</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>78</span><br/><span>Pt</span><br/><span>195.1</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>79</span><br/><span>Au</span><br/><span>197.0</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>80</span><br/><span>Hg</span><br/><span>200.6</span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>81</span><br/><span>Tl</span><br/><span>204.4</span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>82</span><br/><span>Pb</span><br/><span>207.2</span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>83</span><br/><span>Bi</span><br/><span>209.0</span></button></div>
+    			<div class="col-1"><button class="nonmetal"><span>84</span><br/><span>Po</span><br/><span>210</span></button></div>
+    			<div class="col-1"><button class="halogen"><span>85</span><br/><span>At</span><br/><span>210</span></button></div>
+    			<div class="col-1"><button class="nobleGas"><span>86</span><br/><span>Rn</span><br/><span>222</span></button></div>
+    			<div class="col-1"></div>
+    	</div>
+    	<div class="row">
+    			<div class="col-1"><span class="period">7</span></div>
+    			<div class="col-1"><button class="alkalis"><span>87</span><br/><span>Fr</span><br/><span>223</span></button></div>
+    			<div class="col-1"><button class="alkalisEarth"><span>88</span><br/><span>Ra</span><br/><span>226</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>89-103</span><br/><span>Ac-Lr</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>104</span><br/><span>Rf</span><br/><span>261</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>105</span><br/><span>Db</span><br/><span>262</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>106</span><br/><span>Sg</span><br/><span>263</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>107</span><br/><span>Bh</span><br/><span>264</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>108</span><br/><span>Hs</span><br/><span>265</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>109</span><br/><span>Mt</span><br/><span>268</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>110</span><br/><span>Ds</span><br/><span>271</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>111</span><br/><span>Rg</span><br/><span>272</span></button></div>
+    			<div class="col-1"><button class="transitionMetal"><span>112</span><br/><span>Cn</span><br/><span></span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>113</span><br/><span>Uut</span><br/><span>284</span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>114</span><br/><span>Fi</span><br/><span></span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>115</span><br/><span>Uup</span><br/><span>288</span></button></div>
+    			<div class="col-1"><button class="lateTransition"><span>116</span><br/><span>Lv</span><br/><span></span></button></div>
+    			<div class="col-1"><button class="halogen"><span>117</span><br/><span>Uus</span><br/><span></span></button></div>
+    			<div class="col-1"><button class="nobleGas"><span>118</span><br/><span>Uuo</span><br/><span></span></button></div>
+    			<div class="col-1"></div>
+    	</div>
+    	<div class="row chemElement-wrapper">
+    			<div class="col-4"></div>
+    			<div class="col-1"><button class="lanthanide"><span>57</span><br/><span>La</span><br/><span>138.9</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>58</span><br/><span>Ce</span><br/><span>140.1</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>59</span><br/><span>Pr</span><br/><span>140.9</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>60</span><br/><span>Nd</span><br/><span>144.2</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>61</span><br/><span>Pm</span><br/><span>145</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>62</span><br/><span>Sm</span><br/><span>150.4</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>63</span><br/><span>Eu</span><br/><span>152.0</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>64</span><br/><span>Gd</span><br/><span>157.3</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>65</span><br/><span>Tb</span><br/><span>158.9</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>66</span><br/><span>Dy</span><br/><span>162.5</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>67</span><br/><span>Ho</span><br/><span>164.9</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>68</span><br/><span>Er</span><br/><span>167.3</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>69</span><br/><span>Tm</span><br/><span>168.9</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>70</span><br/><span>Yb</span><br/><span>173.0</span></button></div>
+    			<div class="col-1"><button class="lanthanide"><span>71</span><br/><span>Lu</span><br/><span>175.0</span></button></div>
+    			<div class="col-1"></div>
+    	</div>
+    	<div class="row chemElement-wrapper">
+    	        <div class="col-4"></div>
+    			<div class="col-1"><button class="actinide"><span>89</span><br/><span>Ac</span><br/><span>227</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>90</span><br/><span>Th</span><br/><span>232.0</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>91</span><br/><span>Pa</span><br/><span>231.0</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>92</span><br/><span>U</span><br/><span>238.0</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>93</span><br/><span>Np</span><br/><span>237</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>94</span><br/><span>Pu</span><br/><span>244</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>95</span><br/><span>Am</span><br/><span>243</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>96</span><br/><span>Cm</span><br/><span>247</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>97</span><br/><span>Bk</span><br/><span>247</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>98</span><br/><span>Cf</span><br/><span>251</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>99</span><br/><span>Es</span><br/><span>252</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>100</span><br/><span>Fm</span><br/><span>257</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>101</span><br/><span>Md</span><br/><span>258</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>102</span><br/><span>No</span><br/><span>259</span></button></div>
+    			<div class="col-1"><button class="actinide"><span>103</span><br/><span>Lr</span><br/><span>260</span></button></div>	
+    			<div class="col-1"></div>
     	</div>
     </div>
-	<div id="copyright" class="clear">
-		<span>Copyright 2017 xumin2by</span>
-	</div>
-</div>
+    <div id="num">
+    	<h3>原子/分子个数</h3>
+    	<div class="num_row">
+    		<div class="num_col-1"></div>
+    		<div class="num_col-1"><button class="num_box numvalue">1</button></div>
+    		<div class="num_col-1"><button class="num_box numvalue">9</button></div>
+    		<div class="num_col-1"></div>
+    	</div>
+    	<div class="num_row">
+    	    <div class="num_col-1"></div>
+    		<div class="num_col-1"><button class="num_box numvalue">2</button></div>
+    		<div class="num_col-1"><button class="num_box numvalue">0</button></div>
+    		<div class="num_col-1"></div>
+    	</div>
+    	<div class="num_row">
+    		<div class="num_col-1"></div>
+    		<div class="num_col-1"><button class="num_box numvalue">3</button></div>
+    		<div class="num_col-1"><button class="num_box operation">+</button></div>
+    		<div class="num_col-1"></div>
+    	</div>
+    	<div class="num_row">
+    		<div class="num_col-1"></div>
+    		<div class="num_col-1"><button class="num_box numvalue">4</button></div>
+    		<div class="num_col-1"><button class="num_box operation">·</button></div>
+    		<div class="num_col-1"></div>
+    	</div>
+    	<div class="num_row">
+    		<div class="num_col-1"></div>
+    		<div class="num_col-1"><button class="num_box numvalue">5</button></div>
+    		<div class="num_col-1"><button class="num_box operation">(</button></div>
+    		<div class="num_col-1"></div>
+    	</div>
+    	<div class="num_row">
+    		<div class="num_col-1"></div>
+    		<div class="num_col-1"><button class="num_box numvalue">6</button></div>
+    		<div class="num_col-1"><button class="num_box operation">)</button></div>
+    		<div class="num_col-1"></div>
+    	</div>
+    	<div class="num_row">
+    		<div class="num_col-1"></div>
+    		<div class="num_col-1"><button class="num_box numvalue">7</button></div>
+    		<div class="num_col-1"><button class="num_box operation">←</button></div>
+    		<div class="num_col-1"></div>
+    	</div>
+    	<div class="num_row">
+    		<div class="num_col-1"></div>
+    		<div class="num_col-1"><button class="num_box numvalue">8</button></div>
+    		<div class="num_col-1"><button class="num_box operation">C</button></div>
+    		<div class="num_col-1"></div>
+    	</div>
+    </div>
+</main>
+<footer class="clear">
+	<span>Copyright 2017 xumin2by</span>
+</footer>
 </body>
 </html>

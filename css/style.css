@@ -1,142 +1,206 @@
+*{
+	padding:0;
+	margin:0;
+}
+html{
+	font-size:62.5%;
+}
+/*PC端样式*/
+@media screen and (min-width:641px){
+	
+}
+/*平板端样式*/
+@media screen and (min-width:561px){
+	
+}
+/*手机端样式*/
+@media screen and (min-width:481px){
+	
+}
 body{
-	background:red;
-	font-family:"Times New Roman";
-}
-#calculator{
-	width:1150px;	
-	margin:10px auto;
-}
-#headline{
-	width:100%;
-	background:rgb(54,64,79);
-	color:rgb(255,255,255);
-}
-#headline h1{
-	margin:0px;
-	padding:20px 25px;
-}
-#key h3{
-	margin:0px;
-	padding:5px;
-	background:rgb(224,224,224);
-}
-#key span{
-	display:block;
-	font-size:10px;
-	text-align:center;
-}
-#periodTable{
-	width:1000px;
-	background:rgb(249,249,249);
-	float:left;
-}
-#number{
-	background:rgb(249,249,249);
-	float:left;
-}
-#number table{
-	margin:60px 20px;
-}
-#number table td{
-	width:50px;
-	height:50px;
-	background:rgb(230,230,230);
-	border:1px solid rgb(0,0,0);
-	border-radius:3px;
+	font-family:"PingFangSC-Regular",Verdana,Arial,"微软雅黑","宋体";
+	font-size:1.4rem;
 }
 .clear{
 	clear:both;
 }
-#chemElement1{
-	width:966px;
+/*header部分样式设置*/
+header{
+	width:80%;
+	margin:0 auto;
+	background:#36404F;
+}
+
+header h1{
+	color:#FFFFFF;
+	padding:20px 25px;
+}
+/*main部分样式设置*/
+main{
+	width:80%;
+	margin:0 auto;
+	background:#F9F9F9;
+	overflow:hidden;
+}
+main #periodTable{
+	width:85%;
+	background:#F9F9F9;
+	float:left;
+}
+main h3{
+	padding:5px 20px;
+	background:#E0E0E0;
+}
+main #chemElement{
+	width:100%;
 	margin:10px 17px;
 	float:left;
 }
-#chemElement2{
-	width:966px;
-	margin:10px 17px;
-	float:left;
+main #periodTable .row{
+	width:100%;
+	margin:1px 0;/*设置不同行之间的间距*/
+	display:flex;
 }
-#chemElement2 table{
-	float:right;
+main #periodTable .row .col-1{
+	width:5%;
 }
-.otherNonmetal{
-	background:rgb(137,195,72);
+main #periodTable .row .col-3{
+	width:15%;
 }
-.alkalis{
-	background:rgb(253,152,0);
+main #periodTable .row .col-4{
+	width:20%;
 }
-.alkalisEarth{
-	background:rgb(251,195,10);
+main #periodTable .row .col-5{
+	width:25%;
 }
-.transitionMetal{
-	background:rgb(197,137,136);
+main #periodTable .row .col-7{
+	width:35%;
 }
-.lanthanide{
-	background:rgb(251,151,136);
+main #periodTable .row .col-10{
+	width:50%;
 }
-.actinide{
-	background:rgb(176,161,220);
+main #periodTable .row .col-16{
+	width:80%;
 }
-.lateTransition{
-	background:rgb(144,164,173);
-}
-.nonmetal{
-	background:rgb(73,183,170);
-}
-.halogen{
-	background:rgb(33,201,212);
-}
-.nobleGas{
-	background:rgb(1,169,242);
-}
-.blank{
-	width:26px;
-	height:26px;
-}
-.group{
-	width:50px;
-	height:26px;
-	line-height:26px;
-	background:rgb(224,224,224);
-	border:1px solid rgb(224,224,224);
+.otherNonmetal,.alkalis,.alkalisEarth,.transitionMetal,
+.lanthanide,.actinide,.lateTransition,.nonmetal,.halogen,.nobleGas{
+	box-sizing:border-box;
+	width:95%;
+	height:0;
+	padding-bottom:95%;
+	border:1px solid #030303;
 	border-radius:5px;
-}
-.period{
-	width:26px;
-	height:50px;
-	line-height:50px;
-	background:rgb(224,224,224);
-	border:1px solid rgb(224,224,224);
-	border-radius:5px;
-}
-.box{
-	width:50px;
-	height:50px;
-	border:1px solid rgb(0,0,0);
-	border-radius:3px;
-}
-.subgroup{
-	vertical-align:top;
-}
-td{
-	padding:0px;
 	text-align:center;
 }
-#copyright{
-	width:1150px;
+.otherNonmetal{
+	background:#89C348;	
+}
+.alkalis{
+	background:#FD9800;
+}
+.alkalisEarth{
+	background:#FBC30A;
+}
+.transitionMetal{
+	background:#C58988;
+}
+.lanthanide{
+	background:#FB9788;
+}
+.actinide{
+	background:#B0A1DC;
+}
+.lateTransition{
+	background:#90A4AD;
+}
+.nonmetal{
+	background:#49B7AA;
+}
+.halogen{
+	background:#21C9D4;
+}
+.nobleGas{
+	background:#01A9F2;
+}
+.group{
+	box-sizing:border-box;
+	display:block;
+	width:100%;
+	height:0;
+	padding-bottom:50%;
+	line-height:20px;
+	background:#E0E0E0;
+	border:1px solid #E0E0E0;
+	border-radius:5px;
+	text-align:center;
+	margin-top:15px;
+}
+.period{
+	box-sizing:border-box;	
+	width:50%;
+	height:0;
+	padding:30% 0 65% 0;
+	float:right;
+	text-align:center;
+	background:#E0E0E0;
+	border:1px solid #E0E0E0;
+	border-radius:5px;
+}
+main #periodTable .chemElement-wrapper{
+	margin:10px 0;
+}
+
+/*计算器显示屏样式设置*/
+main #periodTable #inputbox{
+	width:90%;
+	height:80%;
+	display:inline-block;
+	vertical-align:middle;
+}
+main #periodTable #extra{
+	height:100%;
+	display:inline-block;
+	vertical-align:middle;
+}
+main #periodTable #calcu{
+	width:90%;
+	height:50%;
+}
+main #num{
+	width:15%;
+	background:#F9F9F9;
+	float:left;
+}
+main #num .num_row{
+	width:100%;
+	display:flex;
+	margin:3px 0;
+}
+main #num .num_row .num_col-1{
+	width:25%;
+}
+.num_box{
+	box-sizing:border-box;
+	display:block;
+	width:95%;
+	height:0;
+	padding:35% 0 60% 0;
+	background:#E6E6E6;
+	border:1px solid #000000;
+	border-radius:5px;
+	text-align:center;
+}
+main #num .num_row:first-of-type{
+	margin-top:50%;
+}
+/*footer部分样式设置*/
+footer{
+	width:80%;
 	height:30px;
-	background:rgb(54,64,79);
-	color:rgb(255,255,255);
+	margin:0 auto;
+	background:#36404F;
+	color:#FFFFFF;
 	text-align:center;
 	line-height:30px;
 }
-.inputs{
-	margin-top:30px;
-}
-#results{
-	width:350px;
-	height:50px;
-	margin:5px auto;
-	background:yellow;
-}
+
