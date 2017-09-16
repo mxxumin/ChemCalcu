@@ -7,7 +7,7 @@
 [ChemCalcu](https://mxxumin.github.io/ChemCalcu/index.html)是一款用于**计算物质化学分子量的专业计算器**，非常实用且功能强大。它可以让我们按照使用普通计算器的方式来计算物质的化学分子量，操作简单，结果准确。
 
 ## Renderings
-![](img/mao-bo-li.png)
+![](img/chem-calcu.jpg)
 
 ## Demo
 :point_right::point_right:[ChemCalcu](https://mxxumin.github.io/ChemCalcu/index.html):point_left::point_left:
